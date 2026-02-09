@@ -2,7 +2,28 @@
 
 Dockerfile for [cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner) — a security scanner for AI Agent Skills that detects prompt injection, data exfiltration, and malicious code patterns.
 
-## Build
+## Quick start
+
+Pull the pre-built image from GitHub Container Registry:
+
+```bash
+docker pull ghcr.io/jkhoffman/skill-scanner-docker:latest
+```
+
+Scan a skill:
+
+```bash
+docker run --rm -v /path/to/skill:/scan/skill \
+  ghcr.io/jkhoffman/skill-scanner-docker scan /scan/skill
+```
+
+A specific version is also available (currently tracking upstream `1.0.2`):
+
+```bash
+docker pull ghcr.io/jkhoffman/skill-scanner-docker:1.0.2
+```
+
+## Build from source
 
 Clone the skill-scanner source and copy the Dockerfile into it:
 
